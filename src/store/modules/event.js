@@ -23,9 +23,10 @@ export default {
   },
 
   actions: {
-    createEvent({ commit, rootState }, event) {
+    createEvent({ commit, dispatch, rootState }, event) {
       // rootstate give me acess to the root of my Vuex state  rootstate.module.state.nae
       console.log('User creating Event is ' + rootState.user.user.name)
+      dispatch('actionToCall') // we don't need to mention what module actionToCall is in , This is becaus by default all our actions mutations and getters are located in the global namespaces
       return EventService.postEvent(event).then(() =>
         commit('ADD_EVENT', event)
       )
