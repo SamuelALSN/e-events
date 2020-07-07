@@ -13,11 +13,9 @@
         </template>
 
         ||
-        <template v-if=" eventDisplay ">
-            <router-link :to="{ name: 'event-list', query: { page: page + 1 } }">
+            <router-link v-if="preventNextDisplay" :to="{ name: 'event-list', query: { page: page + 1 } }">
                 Next Page
             </router-link>
-        </template>
 
     </div>
 </template>
@@ -42,7 +40,7 @@
       page() {
         return parseInt(this.$route.query.page) || 1
       },
-      eventDisplay () {
+      preventNextDisplay () {
          return  this.eventsTotal > this.page * 3
       },
       ...mapState(['events', 'eventsTotal'])
