@@ -33,14 +33,17 @@
 </template>
 
 <script>
-import  { mapState } from  'vuex'
+import { mapState } from 'vuex'
 export default {
   name: 'EventShow',
   props: ['id'],
   created() {
-     this.$store.dispatch('fetchEvent',this.id)
+    this.$store.dispatch('fetchEvent', this.id)
   },
-  computed: mapState(['event'])
+  computed: mapState({
+    // here we are mapping this event property to the event state in our event module
+    event: state => state.event.event
+  })
 }
 </script>
 
