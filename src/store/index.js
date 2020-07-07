@@ -20,14 +20,18 @@ export default new Vuex.Store({
       { id: 2, title: '...', organizer: '...' },
       { id: 3, title: '...', organizer: '...' },
       { id: 4, title: '...', organizer: '...' }
-    ]
+    ],
+    eventsTotal: 0
   },
   mutations: {
     ADD_EVENT(state, event) {
       state.events.push(event)
     },
-    SET_EVENTS(state,events) {
+    SET_EVENTS(state, events) {
       state.events = events
+    },
+    SET_EVENTS_TOTAL(state, data) {
+      state.eventsTotal = data
     }
   },
   actions: {
@@ -37,9 +41,10 @@ export default new Vuex.Store({
 
     },
     fetchEvents({ commit }, { perPage, page }) {// commit stand for context object
-      EventService.getEvents(perPage,page)
+      EventService.getEvents(perPage, page)
         .then(response => {
           commit('SET_EVENTS', response.data)
+          commit('SET_EVENTS_TOTAL', response.headers['x-total-count'])
         })
         .catch(error => console.log(error))
 
