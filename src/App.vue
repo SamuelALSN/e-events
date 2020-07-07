@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <NavBar />
-    <router-view />
+    <router-view :key="$route.fullPath" />
   </div>
 </template>
 
@@ -14,6 +14,7 @@ export default {
   }
 }
 </script>
+
 <style>
 html {
   -webkit-text-size-adjust: 100%;

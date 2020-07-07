@@ -36,8 +36,8 @@ export default new Vuex.Store({
         .then(() => commit('ADD_EVENT', event) )
 
     },
-    fetchEvents({ commit }) {// commit stand for context object
-      EventService.getEvents()
+    fetchEvents({ commit }, { perPage, page }) {// commit stand for context object
+      EventService.getEvents(perPage,page)
         .then(response => {
           commit('SET_EVENTS', response.data)
         })
