@@ -43,6 +43,6 @@ requireComponent.keys().forEach(fileName => {
 
 new Vue({
   router,
-  store,
+  store, // injected store into all components
   render: h => h(App)
 }).$mount('#app')

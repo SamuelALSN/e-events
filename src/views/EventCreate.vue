@@ -1,13 +1,26 @@
 <template>
-    <h1>Create Event </h1>
+  <div>
+    <h1>Create an Event, {{ user.name }}</h1>
+    <p>This event created by {{ user.id }}</p>
+    <ul>
+      <li v-for="cat in categories" :key="cat">{{ cat }}</li>
+    </ul>
+    <p>There are {{ getEventById(2) }}</p>
+  </div>
 </template>
 
 <script>
-    export default {
-        name: "EventCreate"
-    }
+import { mapState,mapGetters } from 'vuex'
+export default {
+  name: 'EventCreate',
+  computed: {
+    // getEvent() {
+    //   return this.$store.getters.getEventById
+    // },
+    ...mapGetters(['getEventById']),
+    ...mapState(['user', 'categories'])
+  }
+}
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
