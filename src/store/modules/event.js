@@ -24,24 +24,46 @@ export default {
   },
 
   actions: {
-    createEvent({ commit, dispatch, rootState }, event) {
-      // rootstate give me acess to the root of my Vuex state  rootstate.module.state.nae
-      console.log('User creating Event is ' + rootState.user.user.name)
-      dispatch('actionToCall') // we don't need to mention what module actionToCall is in , This is becaus by default all our actions mutations and getters are located in the global namespaces
-      return EventService.postEvent(event).then(() =>
-        commit('ADD_EVENT', event)
-      )
+    createEvent({ commit, dispatch }, event) {
+      return EventService.postEvent(event)
+        .then(() => {
+          commit('ADD_EVENT', event)
+          const notification = {
+            type: 'success',
+            message: 'Your event has been created !'
+          }
+          dispatch('notification/add', notification, { root: true })
+        })
+        .catch(error => {
+          const notification = {
+            type: 'error',
+            message: 'There was a problem creating your event :' + error.message
+          }
+          dispatch('notification/add', notification, { root: true })
+          throw error // We’ll also need to throw the error so that we can propagate it up to our component
+        })
     },
-    fetchEvents({ commit }, { perPage, page }) {
+    fetchEvents({ commit, dispatch }, { perPage, page }) {
       // commit stand for context object
       EventService.getEvents(perPage, page)
         .then(response => {
           commit('SET_EVENTS', response.data)
-          commit('SET_EVENTS_TOTAL', response.headers['x-total-count'])
+          commit(
+            'SET_EVENTS_TOTAL',
+            parseInt(response.headers['x-total-count'])
+          )
         })
-        .catch(error => console.log(error))
+        .catch(error => {
+          const notification = {
+            type: 'error',
+            message: 'There was a problem fetching events: ' + error.message
+          }
+          // we pass the notification as payload wher we are dispatching the Action Since our notification module is namespaced we  dispatch the add Action
+          // with 'notification/add', The third argument here , { root: true } is important, This tells dispatch to look for a notification/add action at the root of our store instead of just looking for it inside the module we're currently in
+          dispatch('notification/add', notification, { root: true })
+        })
     },
-    fetchEvent({ commit, getters }, id) {
+    fetchEvent({ commit, dispatch, getters }, id) {
       const event = getters.getEventById(id)
       if (event) {
         commit('SET_EVENT', event)
@@ -51,7 +73,12 @@ export default {
             commit('SET_EVENT', response.data)
           })
           .catch(error => {
-            console.log('There was an error :', error.response)
+            const notification = {
+              type: 'error',
+              message:
+                'There was a problem fetching this event: ' + error.message
+            }
+            dispatch('notification/add', notification, { root: true })
           })
       }
     }

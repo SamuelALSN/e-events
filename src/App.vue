@@ -1,16 +1,20 @@
 <template>
   <div id="app">
     <NavBar />
+    <NotificationContainer />
     <router-view :key="$route.fullPath" />
   </div>
 </template>
 
 <script>
-import NavBar from './components/NavBar'
+import NavBar from '@/components/NavBar'
+import NotificationContainer from '@/components/NotificationContainer'
+
 export default {
   name: 'App',
   components: {
-    NavBar
+    NotificationContainer,
+    NavBar,
   }
 }
 </script>
@@ -283,10 +287,3 @@ select::ms-expand {
   opacity: 0;
 }
 </style>
-<script>
-import NavBar from './components/NavBar'
-
-export default {
-  components: { NavBar }
-}
-</script>
