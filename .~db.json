@@ -1,0 +1,256 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "title": "Beach Cleanup",
+      "date": "Aug 28 2018",
+      "time": "10:00",
+      "location": "Daytona Beach",
+      "description": "Let's clean up this beach.",
+      "organizer": "Adam Jahr",
+      "category": "sustainability",
+      "attendees": [
+        {
+          "id": "abc123",
+          "name": "Adam Jahr"
+        },
+        {
+          "id": "def456",
+          "name": "Gregg Pollack"
+        },
+        {
+          "id": "ghi789",
+          "name": "Beth Swanson"
+        },
+        {
+          "id": "jkl101",
+          "name": "Mary Gordon"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Park Cleanup",
+      "date": "Nov 12 2018",
+      "time": "12:00",
+      "location": "132 N Magnolia Street, Orlando, Florida",
+      "description": "We're going to clean up this park.",
+      "organizer": "Adam Jahr",
+      "category": "nature",
+      "attendees": [
+        {
+          "id": "ghi789",
+          "name": "Beth Swanson"
+        },
+        {
+          "id": "jkl101",
+          "name": "Mary Gordon"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Pet Adoption Day",
+      "date": "Dec 2 2018",
+      "time": "12:00",
+      "location": "132 N Magnolia Street, Orlando, Florida",
+      "description": "Help animals find new homes.",
+      "organizer": "Gregg Pollack",
+      "category": "animal welfare",
+      "attendees": [
+        {
+          "id": "abc123",
+          "name": "Adam Jahr"
+        },
+        {
+          "id": "ghi789",
+          "name": "Beth Swanson"
+        },
+        {
+          "id": "jkl101",
+          "name": "Mary Gordon"
+        }
+      ]
+    },
+    {
+      "id": 8392666,
+      "user": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "category": "housing",
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "title": "Housing prank",
+      "description": "Hey boy we prank you",
+      "location": "TOGO",
+      "date": "2020-07-02T18:47:00.000Z",
+      "time": "11:00",
+      "attendees": []
+    },
+    {
+      "id": 2753,
+      "user": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "category": "animal welfare",
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "title": "Animal is welfare ?",
+      "description": "Ok animal is welfare ",
+      "location": "Togo",
+      "date": "2020-07-01T19:09:00.000Z",
+      "time": "16:00",
+      "attendees": []
+    },
+    {
+      "id": 8912666,
+      "user": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "category": "housing",
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "title": "Housing prank duplicate",
+      "description": "Hey boy we prank you",
+      "location": "TOGO",
+      "date": "2020-07-02T18:47:00.000Z",
+      "time": "11:00",
+      "attendees": []
+    },
+    {
+      "id": 2753565,
+      "user": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "category": "animal welfare so won ",
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "title": "Animal is welfare ?",
+      "description": "Ok animal is welfare ",
+      "location": "Togo",
+      "date": "2020-07-01T19:09:00.000Z",
+      "time": "16:00",
+      "attendees": []
+    },
+    {
+      "id": 891356,
+      "user": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "category": "housing",
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "title": "Housing prank",
+      "description": "Hey boy we prank you",
+      "location": "TOGO",
+      "date": "2020-07-02T18:47:00.000Z",
+      "time": "11:00",
+      "attendees": []
+    },
+    {
+      "id": 2753,
+      "user": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "category": "animal welfare evan you ",
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "title": "Animal is welfare ?",
+      "description": "Ok animal is welfare ",
+      "location": "Togo",
+      "date": "2020-07-01T19:09:00.000Z",
+      "time": "16:00",
+      "attendees": []
+    },
+    {
+      "id": 2750789553,
+      "user": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "category": "evan last test ",
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "title": "Animal is welfare ?",
+      "description": "Ok animal is welfare ",
+      "location": "Togo",
+      "date": "2020-07-01T19:09:00.000Z",
+      "time": "16:00",
+      "attendees": []
+    },
+    {
+      "id": 676821,
+      "user": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "category": "food",
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "title": "food is goodooo",
+      "description": "you know food is good",
+      "location": "BENIN",
+      "date": "2020-07-14T23:17:00.000Z",
+      "time": "10:00",
+      "attendees": []
+    },
+    {
+      "id": 989536,
+      "user": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "category": "nature",
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "title": "TOAST",
+      "description": "LET DO IT ",
+      "location": "ABOMIOO",
+      "date": "2020-07-07T23:51:00.000Z",
+      "time": "8:00",
+      "attendees": []
+    },
+    {
+      "id": 236806,
+      "user": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "category": "food",
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "title": "FRIED CHIKEN",
+      "description": "EASY TO EAT ",
+      "location": "CTR LOME ",
+      "date": "2020-07-14T15:28:00.000Z",
+      "time": "18:00",
+      "attendees": []
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import event from '@/store/modules/event'
-import * as user from  '@/store/modules/user'
+import * as user from '@/store/modules/user'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -14,15 +14,11 @@ export default new Vuex.Store({
       'education',
       'food',
       'community'
-    ],
+    ]
   },
-  mutations: {
-  },
-  actions: {
-  },
-  getters: {
-
-  },
+  mutations: {},
+  actions: {},
+  getters: {},
   modules: {
     user,
     event

@@ -1,6 +1,7 @@
 import EventService from '@/services/EventService'
 
 export default {
+  namespaced: true,
   state: {
     events: [],
     eventsTotal: 0,
