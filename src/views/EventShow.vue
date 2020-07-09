@@ -39,17 +39,12 @@ import { mapState } from 'vuex'
 
 export default {
   name: 'EventShow',
-  props: ['id'],
-  // created() {
-  //   this.fetchEvent(this.id)
-  // },
-  // beforeRouteEnter(routeTo, routeFrom, next) {
-  //   NProgress.start() // start the progress bar
-  //   store.dispatch('event/fetchEvent', routeTo.params.id).then(() => {
-  //     NProgress.done() // when action is done complete progressbar
-  //     next()
-  //   })
-  // },
+  props: {
+    event: {
+      type: Object,
+      required: true
+    }
+  },
   computed: mapState({
     // here we are mapping this event property to the event state in our event module
     event: state => state.event.event

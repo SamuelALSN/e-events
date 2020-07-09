@@ -67,6 +67,7 @@ export default {
       const event = getters.getEventById(id)
       if (event) {
         commit('SET_EVENT', event)
+        return event
       } else {
         return EventService.getEvent(id)
           .then(response => {
