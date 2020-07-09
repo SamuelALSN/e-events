@@ -33,20 +33,25 @@
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex'
+import { mapState } from 'vuex'
+import NProgress from 'nprogress'
+import store from '@/store/index'
+
 export default {
   name: 'EventShow',
   props: ['id'],
-  created() {
-    this.fetchEvent(this.id)
-    //this.$store.dispatch('event/fetchEvent', this.id)
+  beforeRouteEnter(routeTo, routeFrom, next) {
+    NProgress.start() // start the progress bar
+    store.dispatch('event/fetchEvent', routeTo.params.id).then(() => {
+      NProgress.done() // when action is done complete progressbar
+      next()
+    })
   },
   computed: mapState({
     // here we are mapping this event property to the event state in our event module
     event: state => state.event.event
   }),
-  // first argument to mapActions here is the namespace and the second is an array of methods we want our component to have alias to
-  methods: mapActions('event', ['fetchEvent'])
+
 }
 </script>
 
