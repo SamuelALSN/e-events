@@ -269,6 +269,24 @@
       "date": "2020-07-15T21:04:00.000Z",
       "time": "15:00",
       "attendees": []
+    },
+    {
+      "id": 936647,
+      "user": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "category": "education",
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "title": "",
+      "description": "",
+      "location": "NOKOU",
+      "date": "",
+      "time": "",
+      "attendees": []
     }
   ]
 }
