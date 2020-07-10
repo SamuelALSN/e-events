@@ -11,14 +11,20 @@ const routes = [
   {
     path: '/',
     name: 'event-list',
-    component: EventList
+    component: EventList,
+    props: true, // route => ({
+    //   page: route.params.page,
+    //   perPage: route.params.perPage,
+    //   events: route.params.event,
+    //   eventsTotal: route.params.eventsTotal
+    // })
   },
   {
     path: '/event/:id',
     name: 'event-show',
     component: EventShow,
     props: true,
-    beforeEnter(routeTo, routeFrom, next) {
+    beforeEnter(routeTo, routeFrom, next) {// Per route guards
       store.dispatch('event/fetchEvent', routeTo.params.id).then(event => {
         routeTo.params.event = event
         next()

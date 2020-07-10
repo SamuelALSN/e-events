@@ -5,7 +5,8 @@ export default {
   state: {
     events: [],
     eventsTotal: 0,
-    event: {}
+    event: {},
+    perPage: 3
   },
 
   mutations: {
@@ -43,9 +44,9 @@ export default {
           throw error // We’ll also need to throw the error so that we can propagate it up to our component
         })
     },
-    fetchEvents({ commit, dispatch }, { perPage, page }) {
-      // commit stand for context object
-      EventService.getEvents(perPage, page)
+    fetchEvents({ commit, dispatch,state }, {page }) {
+      // We add a return to our EventService so we can only render our EventList component when the call is finished
+     return EventService.getEvents(state.perPage, page)
         .then(response => {
           commit('SET_EVENTS', response.data)
           commit(

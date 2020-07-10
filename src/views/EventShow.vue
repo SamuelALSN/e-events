@@ -33,24 +33,14 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
-//import NProgress from 'nprogress'
-//import store from '@/store/index'
-
-export default {
+  export default {
   name: 'EventShow',
   props: {
     event: {
       type: Object,
       required: true
     }
-  },
-  computed: mapState({
-    // here we are mapping this event property to the event state in our event module
-    event: state => state.event.event
-  }),
-  //methods: mapActions('event', ['fetchEvent'])
-
+  }
 }
 </script>
 
