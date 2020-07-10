@@ -44,9 +44,9 @@ export default {
           throw error // We’ll also need to throw the error so that we can propagate it up to our component
         })
     },
-    fetchEvents({ commit, dispatch,state }, {page }) {
+    fetchEvents({ commit, dispatch, state }, { page }) {
       // We add a return to our EventService so we can only render our EventList component when the call is finished
-     return EventService.getEvents(state.perPage, page)
+      return EventService.getEvents(state.perPage, page)
         .then(response => {
           commit('SET_EVENTS', response.data)
           commit(
@@ -64,7 +64,7 @@ export default {
           dispatch('notification/add', notification, { root: true })
         })
     },
-    fetchEvent({ commit, dispatch, getters }, id) {
+    fetchEvent({ commit, getters }, id) {
       const event = getters.getEventById(id)
       if (event) {
         commit('SET_EVENT', event)
@@ -74,14 +74,14 @@ export default {
           .then(response => {
             commit('SET_EVENT', response.data)
           })
-          .catch(error => {
-            const notification = {
-              type: 'error',
-              message:
-                'There was a problem fetching this event: ' + error.message
-            }
-            dispatch('notification/add', notification, { root: true })
-          })
+          // .catch(error => {
+          //   const notification = {
+          //     type: 'error',
+          //     message:
+          //       'There was a problem fetching this event: ' + error.message
+          //   }
+          //   dispatch('notification/add', notification, { root: true })
+          // })
       }
     }
   },
