@@ -6,7 +6,8 @@ const apiClient = axios.create({
   headers: {
     Accept: 'application/json',
     'Content-Type': 'application/json'
-  }
+  },
+  timeout: 10000
 })
 
 // Axios interceptors act like middlemen (or middleare) allowing us to run some code when a request  is made or a response is received
