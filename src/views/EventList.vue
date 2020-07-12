@@ -51,19 +51,12 @@ export default {
   components: {
     EventCard
   },
-  // created() {
-  //   this.$store.dispatch('event/fetchEvents', {
-  //     perPage: 3,
-  //     page: this.page
-  //   })
-  // },
   beforeRouteEnter(routeTo, routeFrom, next) {
     getPageEvents(routeTo, next)
   },
   beforeRouteUpdate(routeTo, routeFrom, next) {
     getPageEvents(routeTo, next)
   },
-
   computed: {
     hasNextPage() {
       return this.event.eventsTotal > this.page * this.event.perPage

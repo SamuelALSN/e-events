@@ -8,7 +8,7 @@
 <script>
 export default {
   name: 'BaseInput',
-  inheritAttrs:false,
+  inheritAttrs: false,
   props: {
     label: {
       type: String,
