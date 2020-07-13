@@ -323,6 +323,24 @@
       "date": "2020-02-18T20:35:00.000Z",
       "time": "16:00",
       "attendees": []
+    },
+    {
+      "id": 647546,
+      "user": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "category": "education",
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam Jahr"
+      },
+      "title": "RFID U",
+      "description": "IISL",
+      "location": "LOCOAMAN",
+      "date": "2020-07-08T20:54:00.000Z",
+      "time": "7:00",
+      "attendees": []
     }
   ]
 }
