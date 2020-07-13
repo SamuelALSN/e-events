@@ -2,31 +2,67 @@
   <div>
     <h1>Create an Event</h1>
     <form @submit.prevent="createEvent">
-      <BaseSelect label="Select a category" :options="categories" v-model="event.category"/>
+      <BaseSelect
+        label="Select a category"
+        :options="categories"
+        v-model="event.category"
+        @blur="$v.event.category.$touch()"
+        :class="{ error: $v.event.category.$error }"
+      />
+     <!--   Ad class when $error is true    -->
+      <!-- @blur triggers dirty status -->
+      <template v-if="$v.event.category.$error">
+        <p v-if="!$v.event.category.required" class="errorMessage">
+          Category is required
+        </p>
+      </template>
+      <!--  Check if the event.category field contains a value || because required will remain false until it contains a values  -->
       <h3>Name & describe your event</h3>
-      <BaseInput label="Title" v-model="event.title" type="text" placeholder="Title"/>
+      <BaseInput
+        label="Title"
+        v-model="event.title"
+        type="text"
+        placeholder="Title"
+      />
 
-      <BaseInput label="Description" v-model="event.description" type="text" placeholder="Add a description"/>
+      <BaseInput
+        label="Description"
+        v-model="event.description"
+        type="text"
+        placeholder="Add a description"
+      />
 
       <h3>Where is your event?</h3>
 
-      <BaseInput label="Location" v-model="event.location" type="text" placeholder="Add a location"/>
+      <BaseInput
+        label="Location"
+        v-model="event.location"
+        type="text"
+        placeholder="Add a location"
+      />
 
       <h3>When is your event?</h3>
       <div class="field">
         <label>Date</label>
         <datepicker v-model="event.date" placeholder="Select a date" />
       </div>
-      <BaseSelect label="Select a time" :options="times" v-model="event.time" class="field"/>
+      <BaseSelect
+        label="Select a time"
+        :options="times"
+        v-model="event.time"
+        class="field"
+      />
 
-<!--      <div class="field">-->
-<!--        <label>Select a time</label>-->
-<!--        <select v-model="event.time">-->
-<!--          <option v-for="time in times" :key="time">{{ time }}</option>-->
-<!--        </select>-->
-<!--      </div>-->
-<!--      <input type="submit" class="button -fill-gradient" value="Submit" />-->
-      <BaseButton type="submit" buttonClass="-fill-gradient" disabled>Submit </BaseButton>
+      <!--      <div class="field">-->
+      <!--        <label>Select a time</label>-->
+      <!--        <select v-model="event.time">-->
+      <!--          <option v-for="time in times" :key="time">{{ time }}</option>-->
+      <!--        </select>-->
+      <!--      </div>-->
+      <!--      <input type="submit" class="button -fill-gradient" value="Submit" />-->
+      <BaseButton type="submit" buttonClass="-fill-gradient" disabled
+        >Submit
+      </BaseButton>
     </form>
   </div>
 </template>
@@ -37,6 +73,7 @@ import NProgress from 'nprogress'
 import BaseInput from '../components/BaseInput'
 import BaseSelect from '../components/BaseSelect'
 import BaseButton from '../components/BaseButton'
+import { required } from 'vuelidate/lib/validators'
 export default {
   name: 'EventCreate',
   components: {
@@ -87,6 +124,16 @@ export default {
         time: '',
         attendees: []
       }
+    }
+  },
+  validations: {
+    event: {
+      category: { required },
+      title: { required },
+      description: { required },
+      location: { required },
+      date: { required },
+      time: { required }
     }
   }
 }

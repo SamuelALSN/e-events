@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button v-on="$listeners" class="button" v-bind="$attrs" :class="buttonClass"> <!--Inheriting attribute here -->
+        <button v-on="$listeners" class="button" v-bind="$attrs" :class="buttonClass"> <!-- We add v-on="$listeners" is here so we can  Inheriting attribute here added in the parent scope  -->
             <slot/>
         </button>
     </div>

@@ -7,6 +7,7 @@ import NotFound from '../components/NotFound'
 import NProgress from 'nprogress'
 import store from '@/store/'
 import NetworkIssue from '../components/NetworkIssue'
+import Example from '../views/Example'
 Vue.use(VueRouter)
 
 const routes = [
@@ -58,6 +59,10 @@ const routes = [
     path: '/network-issue',
     name: 'network-issue',
     component: NetworkIssue
+  },
+  {
+    path: '/example',
+    component: Example
   },
   {
     path: '*',
